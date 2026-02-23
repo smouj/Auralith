@@ -18,7 +18,7 @@
 **Metrics oracle transforming signals into operator decisions.**
 
 ## Visión
-Auralith es una skill orientada a producción dentro del **Universo SuperAgentes de smouj**. Está diseñada para resolver un problema operativo concreto con ejecución local-first, trazas de razonamiento transparentes y controles de seguridad prácticos. La arquitectura prioriza herramientas gratuitas/open-source, comportamiento determinista e integración modular con otras skills autónomas.
+Auralith es una skill de inteligencia de métricas que transforma señales operativas y de producto en diagnósticos accionables. Detecta anomalías, resume comportamiento de KPIs y ayuda a priorizar intervenciones según salud medible del sistema.
 
 ## Superpoder principal
 - ⚡ **Anomaly-to-action intelligence for product and infra**
