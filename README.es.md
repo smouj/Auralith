@@ -1,13 +1,13 @@
 # Auralith
 
 <p align="center">
-  <img src="./assets/branding/logo.svg" alt="Auralith logo" width="88" />
+  <img src="./assets/branding/logo.svg" alt="Logo de Auralith" width="88" />
 </p>
 
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Auralith)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Auralith)
-![CI](https://img.shields.io/badge/CI-planned-lightgrey)
+![CI](https://img.shields.io/github/actions/workflow/status/smouj/Auralith/ci.yml?branch=main)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20this%20project-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/smouj013_dev)
 
 <p align="center">
@@ -15,63 +15,44 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-**Metrics oracle transforming signals into operator decisions.**
+**Operational metrics oracle for actionable system intelligence.**
 
 ## Visión
-Auralith es una skill de inteligencia de métricas que transforma señales operativas y de producto en diagnósticos accionables. Detecta anomalías, resume comportamiento de KPIs y ayuda a priorizar intervenciones según salud medible del sistema.
+Converts telemetry streams into anomaly signals and prioritized insights.
+
+## Problema que resuelve
+Raw metrics rarely translate into clear operational action.
 
 ## Superpoder principal
-- ⚡ **Anomaly-to-action intelligence for product and infra**
+- ⚡ **Signal-to-action diagnostics with observability-first design**
 
-## Estado actual (Febrero 2026)
-- 🚧 Fase de ideación y scaffolding robusto
-- Próximos hitos:
-  - [ ] Finalizar contratos de dominio e interfaces
-  - [ ] Publicar un comando CLI mínimo ejecutable
-  - [ ] Añadir perfil de modelo local Ollama y estrategia de fallback
-  - [ ] Implementar un ejemplo completo end-to-end
-  - [ ] Añadir puertas de calidad (lint, typecheck, test)
-  - [ ] Publicar arquitectura y runbook operativo
-
-## Arquitectura planeada (stack gratuito/open-source)
-- **Lenguaje principal:** Python 3.11+
-- **Framework agente:** LlamaIndex
-- **Modelos locales:** Ollama (Llama 3.1, Qwen2.5, DeepSeek-Coder, Mistral)
-- **Dependencias clave:** prometheus-api-client, pandas, plotly, great-expectations, fastapi
-- **Modelo de ejecución:** local-first, despliegue self-hosted opcional
-
-## Blueprint de capacidades
+## Casos de uso clave
+- ✅ System monitoring
 - ✅ Anomaly detection
-- ✅ KPI narratives
-- ✅ Threshold policies
-- ✅ Incident hints
-- ✅ Trend forecasting
+- ✅ Capacity insights
+- ✅ Metric summarization
 
 
-## Estructura del proyecto
-```text
-Auralith/
-├── src/auralith/
-│   ├── core/           # orquestación de dominio y políticas
-│   ├── adapters/       # integraciones externas y puentes de herramientas
-│   ├── memory/         # estado, recuperación y estrategias de contexto
-│   └── cli.py          # interfaz de comandos local para operación
-├── docs/
-│   ├── IMPLEMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── RUNBOOK.md
-├── examples/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## Superficie API
+`GET /metrics`, `WS /live`, `GET /health`
+
+## Stack técnico
+- **Stack base:** FastAPI + telemetry adapters + local anomaly models
+- **Ejecución:** local-first, apto para self-hosting
+- **Infra:** compatibilidad con Docker Compose + Caddy + Redis/Chroma/Ollama
+
+## Estado actual (Feb 2026)
+- ✅ Scaffold público disponible
+- ✅ README bilingüe (EN por defecto + ES)
+- ✅ Base de CI + release configurada
+- 🚧 Endurecimiento de funcionalidades en progreso
 
 ## Inicio rápido
 ```bash
 git clone https://github.com/smouj/Auralith.git
 cd Auralith
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.auralith.cli --help
 ```
@@ -83,10 +64,9 @@ python -m src.auralith.cli --help
 - [Guía de despliegue](./docs/DEPLOYMENT.md)
 - [Proceso de releases](./docs/RELEASE.md)
 - [Changelog](./CHANGELOG.md)
-- [Contribución](./CONTRIBUTING.md)
 
 ## Contribución
-Las contribuciones son bienvenidas. Lee **CONTRIBUTING.md** antes de abrir issues o PRs.
+Las contribuciones son bienvenidas. Lee [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Licencia
 MIT © 2026 smouj
